@@ -57,7 +57,7 @@ export default function App() {
             table: "rooms",
             filter: `room_code=eq.${roomCode}`,
           },
-          (p) => {
+          (p: any) => {
             setRoomInfo(p.new);
             setTimeLeft(calculateTimeLeft(p.new.timer_end));
           }
