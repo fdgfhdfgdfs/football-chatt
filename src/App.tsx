@@ -20,9 +20,9 @@ export default function App() {
   const [timeLeft, setTimeLeft] = useState(0);
 
   // دالة مزامنة الوقت الحقيقي بناءً على توقيت السيرفر
-  const calculateTimeLeft = (endTime: any) => {
+    const calculateTimeLeft = (endTime: any) => {
     if (!endTime) return 0;
-    const diff = Math.floor((new Date(endTime) - new Date()) / 1000);
+    const diff = Math.floor((new Date(endTime).getTime() - new Date().getTime()) / 1000);
     return diff > 0 ? diff : 0;
   };
 
